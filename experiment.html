@@ -1,0 +1,42 @@
+<!-- experiment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experiment - Intensity Transformations</title>
+  <link rel="stylesheet" href="style.css">
+  <script async src="opencv.js" type="text/javascript"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Intensity Transformation Lab</h1>
+
+    <!-- Upload Image -->
+    <input type="file" id="uploadImage" accept="image/*">
+    
+    <!-- Transformation Options -->
+    <select id="transformType">
+      <option value="log">Log Transform</option>
+      <option value="gamma">Power-Law (Gamma) Transform</option>
+      <option value="contrast">Contrast Stretching</option>
+      <option value="threshold">Thresholding</option>
+      <option value="histogram">Histogram Equalization</option>
+    </select>
+
+    <!-- Extra input for gamma/threshold -->
+    <input type="number" id="parameter" placeholder="Enter value (e.g., 0.5)" step="0.1">
+
+    <!-- Apply Button -->
+    <button onclick="applyTransformation()">Apply Transformation</button>
+
+    <!-- Display Images -->
+    <h3>Original Image:</h3>
+    <canvas id="originalCanvas"></canvas>
+
+    <h3>Transformed Image:</h3>
+    <canvas id="outputCanvas"></canvas>
+  </div>
+</body>
+</html>
